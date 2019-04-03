@@ -37,10 +37,6 @@ try
 	
 	String name="ridhi",email="sharma",pwd="test";
 	
-	name = request.getparamenter("name");
-	email = request.getparamenter("email");
-	pwd = request.getparamenter("pwd");
-	
 	
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection con = DriverManager.getConnection("jdbc:mysql://dbs92.cm8uzr6c4avp.us-east-2.rds.amazonaws.com/akshay", "akshay", "akshay123");

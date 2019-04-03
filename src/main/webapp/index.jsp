@@ -1,3 +1,9 @@
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
 <html>
 <head>
   <title>Bootstrap Example</title>
@@ -15,7 +21,7 @@
 
 <div class="container">
 
-<form action="SaveData" method="get">
+<form action="" method="get">
 
   <p> Name : <input type="name" name="name" class="form-control"  /></p>      
   <p>Email : <input type="email" name="email" class="form-control"  /></p>
@@ -23,6 +29,36 @@
        <p> <input type="submit" value="Register"  class="btn btn-success" /></p>
 
 </form>
+
+
+<%
+try
+{
+	
+	String name="ridhi",email="sharma",pwd="test";
+	
+	name = request.getparamenter("name");
+	email = request.getparamenter("email");
+	pwd = request.getparamenter("pwd");
+	
+	
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection con = DriverManager.getConnection("jdbc:mysql://dbs92.cm8uzr6c4avp.us-east-2.rds.amazonaws.com/akshay", "akshay", "akshay123");
+
+	Statement st = con.createStatement();
+	
+	st.executeUpdate("insert into users(name,email,pwd) values('"+name+"','"+email+"','"+pwd+"')" );
+
+	
+	con.close();
+}
+catch(Exception  ex){
+	
+	
+}
+
+%>
+
 
 </div>
 

@@ -15,10 +15,15 @@
 
 <div class="container">
 
+<form action="SaveData" method="get">
+
   <p> Name : <input type="name" name="name" class="form-control"  /></p>      
   <p>Email : <input type="email" name="email" class="form-control"  /></p>
   <p>Password : <input type="password" name="pwd" class="form-control"  /></p>
        <p> <input type="submit" value="Register"  class="btn btn-success" /></p>
+
+</form>
+
 </div>
 
 </body>
